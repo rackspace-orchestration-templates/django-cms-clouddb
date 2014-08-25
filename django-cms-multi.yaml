@@ -215,7 +215,7 @@ parameters:
     type: string
     default: pydev
     description: |
-      Username with which to login to the Linux servers.  This user
+      Username with which to login to the Linux servers. This user
       will be the owner of the Python Virtual Environment under which Django
       is installed.
     constraints:
@@ -227,7 +227,7 @@ parameters:
     description: |
       URL for the kitchen to use, fetched using git
     type: string
-    default: https://github.com/brint/django-test
+    default: https://github.com/rackspace-orchestration-templates/django-cms-clouddb
 
   chef_version:
     label: Chef Version
