@@ -8,7 +8,7 @@ def check():
     env.platform_family = detect.detect()
 
     assert package.installed("apache2")
-    assert file.exists("/srv/venv/bin/django-admin.py")
+    assert file.exists("/srv/workspace/bin/django-admin.py")
     assert file.exists("/etc/apache2/mods-enabled/wsgi.conf")
     assert file.exists("/etc/apache2/mods-enabled/wsgi.load")
     assert port.is_listening(80)
