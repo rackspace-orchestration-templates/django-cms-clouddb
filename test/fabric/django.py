@@ -1,7 +1,15 @@
-from fabric.api import env, run, task
+import re
+from fabric.api import env, hide, run, task
 from envassert import detect, file, group, package, port, process, service, \
     user
 
+def django_cms_is_responding():
+    with hide('running', 'stdout'):
+        homepage = run("wget --no-check-certificate --quiet --output-document - http://localhost/")
+        if re.search('Welcome to django CMS', homepage):
+            return True
+        else:
+            return False
 
 @task
 def check():
@@ -17,3 +25,4 @@ def check():
     assert user.is_belonging_group("pydev", "pydev")
     assert process.is_up("apache2")
     assert service.is_enabled("apache2")
+    assert django_cms_is_responding()
