@@ -1,0 +1,57 @@
+schema-version: 1.0.0
+application-family: CMS
+application-name: Django CMS
+application-version: "3.0"
+flavor: Multiple Linux servers
+flavor-weight: 1
+reach-info:
+  icon-20x20: https://0b5294b243620310a700-e388a7f3aba385a925111b1fc6f680d4.ssl.cf2.rackcdn.com/django-icon-20x20.png
+  tattoo: https://0b5294b243620310a700-e388a7f3aba385a925111b1fc6f680d4.ssl.cf2.rackcdn.com/django-tattoo.png
+hidden_outputs:
+  - private_key
+  - db_pass
+  - django_admin_pass
+abstract: |
+  Load Balanced Linux servers running [Django](http://djangoproject.com) with
+  [Django-CMS](http://django-cms.org) installed into a
+  [Python](http://python.org) [Virtual Environment](http://virutalenv.org)
+  running behind [Apache](http://httpd.apache.org/) with
+  [mod_wsgi](http://code.google.com/p/modwsgi/). The backend is a Cloud
+  Database running [MySQL](http://www.mysql.com/).
+instructions: |
+  #### Getting Started
+  As soon as the deployment finishes building, you can access your site by
+  hitting the Django CMS URL in the outputs section. From the Django CMS
+  default home page there will be a link to go into edit mode which will pop up
+  a login prompt at the top of your browser. Use the Django Admin User and
+  Password provided in the outputs to login to begin managing your site.
+
+  #### Details of Your Setup
+  This deployment was stood up using
+  [chef-solo](http://docs.opscode.com/chef_solo.html). Once the deployment is
+  up, chef will not run again, so it is safe to modify configurations.
+
+  A system user of 'pydev' has been created. This user has owns the [Virtual
+  Environment](http://virutalenv.org) setup in '/srv/workspace'. If you need to
+  install additional packages with pip, run 'source
+  /srv/workspace/bin/activate' as the 'pydev' user prior to running 'pip
+  install'.
+
+  The Django CMS can be found in '/srv/workspace/mysite'. All installed
+  applications and settings can be found in 'mysite/settings.py'.
+
+  The CMS is served by [Apache](http://httpd.apache.org/) leveraging
+  [mod_wsgi](http://www.modwsgi.org/). The mod_wsgi configuration can be found
+  in '/etc/apache2/mods-available/wsgi.conf', and the Apache site configuration
+  can  be found within '/etc/apache2/sites-available/mysite.conf'. Any changes
+  to configuration files will require Apache to be restarted or reloaded.
+
+  #### Logging In via SSH
+  The Linux user provided with this deployment will provide you SSH access to
+  your servers. This user will have sudo access to gain root access.
+  Alternatively, the private key provided in the passwords section can be used
+  to login as root via SSH. We have an article on how to use these keys with
+  [Mac OS X and
+  Linux](http://www.rackspace.com/knowledge_center/article/logging-in-with-a-ssh-private-key-on-linuxmac)
+  as well as [Windows using
+  PuTTY](http://www.rackspace.com/knowledge_center/article/logging-in-with-a-ssh-private-key-on-windows).
