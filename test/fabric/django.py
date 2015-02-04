@@ -2,6 +2,8 @@ import re
 from fabric.api import env, hide, run, task
 from envassert import detect, file, group, package, port, process, service, \
     user
+from hot.utils.test import get_artifacts
+
 
 def django_cms_is_responding():
     with hide('running', 'stdout'):
@@ -26,3 +28,9 @@ def check():
     assert process.is_up("apache2")
     assert service.is_enabled("apache2")
     assert django_cms_is_responding()
+
+
+@task
+def artifacts():
+    env.platform_family = detect.detect()
+    get_artifacts()
