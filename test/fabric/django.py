@@ -7,11 +7,14 @@ from hot.utils.test import get_artifacts
 
 def django_cms_is_responding():
     with hide('running', 'stdout'):
-        homepage = run("wget --no-check-certificate --quiet --output-document - http://localhost/")
+        wget_cmd = ("wget --no-check-certificate --quiet "
+                    "--output-document - http://localhost/")
+        homepage = run(wget_cmd)
         if re.search('Welcome to django CMS', homepage):
             return True
         else:
             return False
+
 
 @task
 def check():
