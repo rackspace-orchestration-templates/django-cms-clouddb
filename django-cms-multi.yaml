@@ -239,7 +239,7 @@ parameters:
     label: Child Template
     description: Location of child template
     type: string
-    default: https://raw.githubusercontent.com/rackspace-orchestration-templates/django-cms-clouddb/nova/django-cms-single.yaml
+    default: https://raw.githubusercontent.com/rackspace-orchestration-templates/django-cms-clouddb/master/django-cms-single.yaml
 
 resources:
   # SSH keys
