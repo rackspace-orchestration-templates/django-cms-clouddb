@@ -178,7 +178,7 @@ resources:
     properties:
       username: root
       private_key: { get_param: private_key }
-      host: { get_attr: [django_server, networks, private, 0] }
+      host: { get_attr: [django_server, accessIPv4] }
       kitchen: { get_param: kitchen }
       chef_version: { get_param: chef_version }
       node:
