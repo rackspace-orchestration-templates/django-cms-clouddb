@@ -9,6 +9,6 @@ cookbook 'apache2'
 cookbook 'python'
 cookbook 'application_python'
 cookbook 'rax-firewall',
-  :git => 'https://github.com/brint/rax-firewall-cookbook'
+  :git => 'https://github.com/heat-cookbooks/rax-firewall-cookbook'
 cookbook 'rax-django-cms',
   :path => './site-cookbooks/rax-django-cms'
