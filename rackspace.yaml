@@ -63,4 +63,4 @@ description: |
   [Virtual Environment](http://virutalenv.org) running behind
   [Apache](http://httpd.apache.org/) with
   [mod_wsgi](http://code.google.com/p/modwsgi/).
-  The backend is a Cloud Database running [MySQL](http://www.mysql.com/.
+  The backend is a Cloud Database running [MySQL](http://www.mysql.com/).
