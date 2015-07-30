@@ -12,12 +12,8 @@ hidden_outputs:
   - db_pass
   - django_admin_pass
 abstract: |
-  Load Balanced Linux servers running [Django](http://djangoproject.com) with
-  [Django-CMS](http://django-cms.org) installed into a
-  [Python](http://python.org) [Virtual Environment](http://virutalenv.org)
-  running behind [Apache](http://httpd.apache.org/) with
-  [mod_wsgi](http://code.google.com/p/modwsgi/). The backend is a Cloud
-  Database running [MySQL](http://www.mysql.com/).
+  Django is an open-source web application framework that allows Python
+  developers to easily create dynamic websites.
 instructions: |
   #### Getting Started
   As soon as the deployment finishes building, you can access your site by
