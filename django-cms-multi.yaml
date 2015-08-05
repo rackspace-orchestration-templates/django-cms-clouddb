@@ -1,7 +1,15 @@
 heat_template_version: 2013-05-23
 
 description: |
-  Heat template to deploy a load balancer, multiple servers running Django, and a Cloud Database
+  #### Django CMS
+
+  Load Balanced Linux servers running [Django](http://djangoproject.com)
+  with [Django-CMS](http://django-cms.org) installed into a
+  [Python](http://python.org)
+  [Virtual Environment](http://virutalenv.org) running behind
+  [Apache](http://httpd.apache.org/) with
+  [mod_wsgi](http://code.google.com/p/modwsgi/).
+  The backend is a Cloud Database running [MySQL](http://www.mysql.com/).
 
 parameter_groups:
 
